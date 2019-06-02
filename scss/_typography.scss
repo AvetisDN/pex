@@ -1,0 +1,48 @@
+$font: 'Open Sans', sans-serif;
+$f-size: 15px;
+$l-height: 1.75em;
+$f-small: .85rem;
+$f-big: 1.3333rem;
+
+body {
+  font-family: $font;
+  font-size: $f-size;
+  line-height: $l-height;
+}
+
+.text-small {
+  font-size: $f-small !important;
+}
+.text-big {
+  font-size: $f-big !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.4em;
+  margin-top: .75em;
+  margin-bottom: .75em;
+}
+h1 {
+  font-weight: 400;
+  font-size: 3.3333rem;
+}
+h2 {
+  font-weight: 400;
+  font-size: 2.6667rem;
+}
+h3 {
+  font-weight: 300;
+  font-size: 2.3333rem;
+}
+h5 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: underline;
+  transition: 250ms ease;
+}
+a:hover {
+  text-decoration: none;
+}

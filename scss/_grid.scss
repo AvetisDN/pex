@@ -1,0 +1,111 @@
+$cols: 20;
+$gap: 20px;
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  xxl: 1600px
+);
+
+.container-fluid {
+  max-width:100%;
+  padding: 0 $gap;
+  box-sizing: border-box;
+}
+.row {
+  margin: 0 -$gap/2;
+  display: flex;
+}
+.col, *[class*="col-"] {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 $gap/2;
+}
+.row.y-gap {
+  .col, *[class*="col-"] {
+    padding: $gap/2;
+  }
+}
+
+.col {
+  flex-grow: 1;
+}
+
+  @for $i from 0 through 5 {
+    .p-#{$i} {
+      padding: $i*5px !important;
+    }
+    .pl-#{$i} {
+      padding-left: $i*5px !important;
+    }
+    .pr-#{$i} {
+      padding-right: $i*5px !important;
+    }
+    .pt-#{$i} {
+      padding-top: $i*5px !important;
+    }
+    .pb-#{$i} {
+      padding-bottom: $i*5px !important;
+    }
+    .px-#{$i} {
+      padding-left: $i*5px !important;
+      padding-right: $i*5px !important;
+    }
+    .py-#{$i} {
+      padding-top: $i*5px !important;
+      padding-bottom: $i*5px !important;
+    }
+    .m-#{$i} {
+      margin: $i*5px !important;
+    }
+    .ml-#{$i} {
+      margin-left: $i*5px !important;
+    }
+    .mr-#{$i} {
+      margin-right: $i*5px !important;
+    }
+    .mt-#{$i} {
+      margin-top: $i*5px !important;
+    }
+    .mb-#{$i} {
+      margin-bottom: $i*5px !important;
+    }
+    .mx-#{$i} {
+      margin-left: $i*5px !important;
+      margin-right: $i*5px !important;
+    }
+    .mx-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .my-#{$i} {
+      margin-top: $i*5px !important;
+      margin-bottom: $i*5px !important;
+    }
+  }
+  @for $k from 1 through $cols {
+    .col-#{$k} {
+      flex-basis: 100% * $k / $cols;
+      max-width: 100% * $k / $cols;
+    }
+    .offset-#{$k - 1} {
+      flex-basis: 100% * ($k - 1) / $cols;
+      max-width: 100% * ($k - 1) / $cols;
+    }
+  }
+  @each $bp, $size in $breakpoints {
+    @media screen and (min-width: $size) {
+      @for $c from 1 through $cols {
+        .col-#{$bp}-#{$c} {
+          flex-basis: 100% * $c / $cols;
+          max-width: 100% * $c / $cols;
+        }
+        .offset-#{$bp}-#{$c - 1} {
+          flex-basis: 100% * ($c - 1) / $cols;
+          max-width: 100% * ($c - 1) / $cols;
+        }
+      }
+    }
+  }
