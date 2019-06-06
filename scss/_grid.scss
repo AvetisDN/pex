@@ -10,12 +10,16 @@ $breakpoints: (
 );
 
 .container-fluid {
-  max-width:100%;
+  width:100%;
   padding: 0 $gap;
   box-sizing: border-box;
 }
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
 .row {
-  margin: 0 -$gap/2;
+  margin: 0 (0-$gap/2);
   display: flex;
 }
 .col, *[class*="col-"] {
@@ -28,7 +32,6 @@ $breakpoints: (
     padding: $gap/2;
   }
 }
-
 .col {
   flex-grow: 1;
 }
@@ -105,6 +108,16 @@ $breakpoints: (
         .offset-#{$bp}-#{$c - 1} {
           flex-basis: 100% * ($c - 1) / $cols;
           max-width: 100% * ($c - 1) / $cols;
+        }
+      }
+      @if($bp == xl) {
+        .container {
+          max-width: 1200px;
+        }
+      }
+      @if($bp == xxl) {
+        .container {
+          max-width: 1440px;
         }
       }
     }

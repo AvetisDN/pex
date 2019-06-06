@@ -1,0 +1,10 @@
+@mixin overlay($image: forest, $color: $coral, $opacity: 0.2) {
+  background-image: linear-gradient(transparentize($color, $opacity), transparentize($color, $opacity)), url('../images/content/#{$image}.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+@mixin cover($image: header) {
+  background-image: url('../images/content/#{$image}.jpg');
+  background-size: cover;
+  background-position: center center;
+}

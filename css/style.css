@@ -1,11 +1,16 @@
 .container-fluid {
-  max-width: 100%;
+  width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .row {
-  margin: -10px;
+  margin: 0 -10px;
   display: flex;
 }
 
@@ -1617,6 +1622,10 @@
     flex-basis: 95%;
     max-width: 95%;
   }
+
+  .container {
+    max-width: 1200px;
+  }
 }
 @media screen and (min-width: 1600px) {
   .col-xxl-1 {
@@ -1818,6 +1827,10 @@
     flex-basis: 95%;
     max-width: 95%;
   }
+
+  .container {
+    max-width: 1440px;
+  }
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -1866,6 +1879,111 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+.btn {
+  border: 0;
+  display: inline-block;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  min-width: 280px;
+  text-align: center;
+  background-color: #fff;
+  color: #d01d3b;
+  transition: 250ms ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 2.5rem;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #d9d9d9;
+}
+.btn.btn-purple {
+  background-color: #8824cd;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+}
+.btn.btn-purple:hover {
+  background-color: #5d198c;
+}
+
+body {
+  background-color: #fff;
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(136, 36, 205, 0.2);
+}
+.top-nav .top-logo {
+  height: calc(2rem + 50px);
+}
+.top-nav .top-logo img {
+  height: 100%;
+}
+.top-nav .top-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.top-nav .top-menu a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0 1.5rem;
+  height: 100%;
+}
+.top-nav .top-menu a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  display: block;
+  left: 1.5rem;
+  bottom: 0;
+  opacity: 0;
+  transition: 250ms ease;
+}
+.top-nav .top-menu a.active::after, .top-nav .top-menu a:hover::after {
+  width: calc(100% - 3rem);
+  opacity: 1;
+}
+
+.header {
+  background-image: url("../images/content/header.jpg");
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  text-align: center;
+}
+.header .row {
+  height: 100vh;
+  align-items: center;
+}
+
+.features {
+  background-color: #2e3b4e;
+  color: #fff;
+  position: relative;
+}
+.features::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 36px;
+  background-image: url(../images/layout/shape.png);
+  position: absolute;
+  bottom: -35px;
+  left: calc(50% - 70px);
+  z-index: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

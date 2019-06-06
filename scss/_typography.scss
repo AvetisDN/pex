@@ -41,7 +41,7 @@ h5 {
 
 a {
   text-decoration: underline;
-  transition: 250ms ease;
+  transition: $transition;
 }
 a:hover {
   text-decoration: none;

@@ -1,0 +1,27 @@
+.btn {
+  border: 0;
+  display: inline-block;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  min-width: 280px;
+  text-align: center;
+  background-color: $text-light;
+  color: $deep-coral;
+  transition: $transition;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 2.5rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  &:hover {
+    background-color: darken($text-light, 15%);
+  }
+  &.btn-purple {
+    background-color: $purple;
+    color: $text-light;
+    box-shadow: rgba(0,0,0,.3) 0 1px 0, inset rgba(255,255,255,.4) 0 1px 0;
+    &:hover {
+      background-color: $deep-purple;
+    }
+  }
+}
