@@ -13,12 +13,23 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  //background-color: desaturate($deep-purple, 30%);
+  z-index: 100;
   border-bottom: 1px solid fade_out($purple, .8);
+  transition: $transition;
+  &.scrolled {
+    background-color: $ash;
+    .top-logo {
+      padding: 10px 0;
+    }
+  }
   .top-logo {
-    height: calc(2rem + 50px);
+    padding: 25px 0;
+    height: 2rem;
+    box-sizing: content-box;
+    transition: $transition;
     img {
       height: 100%;
+      transition: $transition;
     }
   }
   .top-menu {
@@ -52,6 +63,43 @@ body {
           opacity: 1;
         }
       }
+    }
+    @media screen and (max-width: 991px) {
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -400px;
+      width: 80%;
+      max-width: 400px;
+      background: $ash;
+      padding-top: 1.5rem;
+      transition: $transition;
+      &.show {
+        left: 0;
+      }
+      a {
+        display: block;
+        height: auto;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .top-burger {
+    display: none;
+    a {
+      display: flex;
+      height: 100%;
+      padding: 0 1rem;
+      color: $text-light;
+      text-decoration: none;
+      font-size: 2rem;
+      align-items: center;
+    }
+    @media screen and (max-width: 991px) {
+      display: block;
     }
   }
 }

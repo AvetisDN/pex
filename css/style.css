@@ -1917,13 +1917,25 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   border-bottom: 1px solid rgba(136, 36, 205, 0.2);
+  transition: 250ms ease;
+}
+.top-nav.scrolled {
+  background-color: #2e3b4e;
+}
+.top-nav.scrolled .top-logo {
+  padding: 10px 0;
 }
 .top-nav .top-logo {
-  height: calc(2rem + 50px);
+  padding: 25px 0;
+  height: 2rem;
+  box-sizing: content-box;
+  transition: 250ms ease;
 }
 .top-nav .top-logo img {
   height: 100%;
+  transition: 250ms ease;
 }
 .top-nav .top-menu {
   display: flex;
@@ -1955,6 +1967,47 @@ body {
 .top-nav .top-menu a.active::after, .top-nav .top-menu a:hover::after {
   width: calc(100% - 3rem);
   opacity: 1;
+}
+@media screen and (max-width: 991px) {
+  .top-nav .top-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -400px;
+    width: 80%;
+    max-width: 400px;
+    background: #2e3b4e;
+    padding-top: 1.5rem;
+    transition: 250ms ease;
+  }
+  .top-nav .top-menu.show {
+    left: 0;
+  }
+  .top-nav .top-menu a {
+    display: block;
+    height: auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+}
+.top-nav .top-burger {
+  display: none;
+}
+.top-nav .top-burger a {
+  display: flex;
+  height: 100%;
+  padding: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  align-items: center;
+}
+@media screen and (max-width: 991px) {
+  .top-nav .top-burger {
+    display: block;
+  }
 }
 
 .header {
